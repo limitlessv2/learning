@@ -1,8 +1,15 @@
-package patterns.java;
+package abstractfactory;
 
-public class ShapeFactory {
+import patterns.java.Circle;
+import patterns.java.Rectangle;
+import patterns.java.Shape;
+import patterns.java.Square;
+
+public class ShapeFactory extends AbstractFactory {
+	
+	@Override
 	public Shape getShape(String shapeType){
-		
+
 		if (shapeType == null){
 			return null;
 		}
@@ -15,7 +22,14 @@ public class ShapeFactory {
 		else if (shapeType.equalsIgnoreCase("Rectangle")){
 			return new Rectangle();
 		}
-	
+			
 		return null;
 	}
-}
+
+	@Override
+	Color getColor(String color) {
+		return null;
+	}
+	
+
+}	
